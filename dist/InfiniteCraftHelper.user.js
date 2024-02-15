@@ -1,4 +1,5 @@
 
+
 // ==UserScript==
 // @name			Infinite Craft Helper
 // @namespace		mikarific.com
