@@ -275,7 +275,7 @@ const css = `
         user-select: none;
     }
 
-    span + span {
+    .close-button + .close-button {
         margin-left: 10px;
     }
     

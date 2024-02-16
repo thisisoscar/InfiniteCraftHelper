@@ -292,8 +292,13 @@
         -moz-user-select: none;
         user-select: none;
     }
+    
     .close-button:hover {
         transform: scale(1.05)
+    }
+
+    .close-button + .close-button {
+        margin-left: 10px;
     }
 
     .instance-emoji {
