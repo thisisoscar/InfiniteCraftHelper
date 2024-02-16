@@ -21,15 +21,19 @@ export async function init(elements: elements) {
 	craftsTitle.appendChild(document.createTextNode('Crafts'));
 	craftsHeader.appendChild(craftsTitle);
 
+	const craftsButtons = document.createElement('span');
+
 	const backButton = document.createElement('img');
 	backButton.src = backIcon.trim();
 	backButton.classList.add('close-button');
-	craftsHeader.appendChild(backButton);
+	craftsButtons.appendChild(backButton);
 
 	const closeButton = document.createElement('img');
 	closeButton.src = closeIcon.trim();
 	closeButton.classList.add('close-button');
-	craftsHeader.appendChild(closeButton);
+	craftsButtons.appendChild(closeButton);
+
+	craftsHeader.appendChild(craftsButtons);
 
 	craftsModal.appendChild(craftsHeader);
 
