@@ -22,12 +22,12 @@ export async function init(elements: elements) {
 	craftsHeader.appendChild(craftsTitle);
 
 	const backButton = document.createElement('img');
-	backButton.src = '../script/lib/back button.png';
+	backButton.src = backIcon.trim();
 	backButton.classList.add('close-button');
 	craftsHeader.appendChild(backButton);
 
 	const closeButton = document.createElement('img');
-	closeButton.src = backIcon.trim();
+	closeButton.src = closeIcon.trim();
 	closeButton.classList.add('close-button');
 	craftsHeader.appendChild(closeButton);
 
