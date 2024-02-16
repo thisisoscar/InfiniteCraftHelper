@@ -1,6 +1,6 @@
 import type { elements } from './index';
 
-import { closeIcon } from './lib/assets';
+import { closeIcon, backIcon } from './lib/assets';
 
 const craftsModal = document.createElement('dialog');
 const craftsTitle = document.createElement('h1');
@@ -20,6 +20,11 @@ export async function init(elements: elements) {
 	craftsTitle.classList.add('modal-title');
 	craftsTitle.appendChild(document.createTextNode('Crafts'));
 	craftsHeader.appendChild(craftsTitle);
+
+	const backButton = document.createElement('img');
+	backButton.src = backIcon.trim();
+	backButton.classList.add('close-button');
+	craftsHeader.appendChild(backButton);
 
 	const closeButton = document.createElement('img');
 	closeButton.src = closeIcon.trim();
