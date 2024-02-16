@@ -367,12 +367,12 @@
         craftsTitle.classList.add('modal-title');
         craftsTitle.appendChild(document.createTextNode('Crafts'));
         craftsHeader.appendChild(craftsTitle);
+        const backButton = document.createElement('img');
+        backButton.src = '../script/lib/back button.png';
+        backButton.classList.add('close-button');
         const closeButton = document.createElement('img');
         closeButton.src = closeIcon.trim();
         closeButton.classList.add('close-button');
-        const backButton = document.createElement('img');
-        backButton.src = backIcon.trim();
-        backButton.classList.add('close-button');
         craftsHeader.appendChild(backButton);
         craftsHeader.appendChild(closeButton);
         craftsModal.appendChild(craftsHeader);
@@ -492,6 +492,9 @@
         discoveriesTitle.classList.add('modal-title');
         discoveriesTitle.appendChild(document.createTextNode('Your First Discoveries'));
         discoveriesHeader.appendChild(discoveriesTitle);
+        const backButton = document.createElement('img');
+        backButton.src = '../script/lib/back button.png';
+        backButton.classList.add('close-button');
         const closeButton = document.createElement('img');
         closeButton.src = closeIcon.trim();
         closeButton.classList.add('close-button');
