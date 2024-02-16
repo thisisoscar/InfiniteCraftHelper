@@ -273,6 +273,9 @@ const css = `
         -webkit-user-select: none;
         -moz-user-select: none;
         user-select: none;
+    }
+
+    span + span {
         margin-left: 10px;
     }
     
