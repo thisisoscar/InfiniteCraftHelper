@@ -374,8 +374,10 @@
         const closeButton = document.createElement('img');
         closeButton.src = closeIcon.trim();
         closeButton.classList.add('close-button');
-        craftsHeader.appendChild(backButton);
-        craftsHeader.appendChild(closeButton);
+        craftsButtons = document.createElement('span');
+        craftsButtons.appendChild(backButton);
+        craftsButtons.appendChild(closeButton);
+        craftsHeader.appendChild(craftsButtons);
         craftsModal.appendChild(craftsHeader);
         craftsContainer.classList.add('crafts-container');
         craftsModal.appendChild(craftsContainer);
