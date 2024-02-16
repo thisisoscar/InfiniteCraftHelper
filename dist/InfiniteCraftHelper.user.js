@@ -292,7 +292,7 @@
         -moz-user-select: none;
         user-select: none;
     }
-    
+
     .close-button:hover {
         transform: scale(1.05)
     }
@@ -411,7 +411,7 @@
         ]);
         await GM.setValue('recipes', JSON.stringify(recipes));
     }
-    function openCraftsForElement(element) {
+    function openCraftsForElement(element, history) {
         craftsTitle.innerHTML = '';
         const titleEmoji = document.createElement('span');
         titleEmoji.classList.add('display-item-emoji');
@@ -444,7 +444,7 @@
                 firstDiv.appendChild(document.createTextNode(` ${elementRecipe[0].text} `));
                 if (recipeKeys.includes(elementRecipe[0].text)) {
                     firstDiv.addEventListener('click', () => {
-                        openCraftsForElement(elementRecipe[0]);
+                        openCraftsForElement(elementRecipe[0], history.push(element));
                     });
                 }
                 recipeDiv.appendChild(firstDiv);
@@ -462,7 +462,7 @@
                 secondDiv.appendChild(document.createTextNode(` ${elementRecipe[1].text} `));
                 if (recipeKeys.includes(elementRecipe[1].text)) {
                     secondDiv.addEventListener('click', () => {
-                        openCraftsForElement(elementRecipe[1]);
+                        openCraftsForElement(elementRecipe[1], history.push(element));
                     });
                 }
                 recipeDiv.appendChild(secondDiv);
@@ -535,7 +535,8 @@
         elementDiv.appendChild(document.createTextNode(` ${element.text} `));
         if (recipeKeys.includes(element.text)) {
             elementDiv.addEventListener('click', () => {
-                openCraftsForElement(element);
+                let hitsory = [];
+                openCraftsForElement(element, history);
             });
         }
         discoveriesModal.appendChild(elementDiv);
@@ -710,7 +711,7 @@
         const selectElement = window.unsafeWindow.$nuxt.$root.$children[2].$children[0].$children[0].selectElement;
         window.unsafeWindow.$nuxt.$root.$children[2].$children[0].$children[0].selectElement = (e, element) => {
             if (e.button === 2)
-                return openCraftsForElement(element);
+                return openCraftsForElement(element, []);
             if (e.altKey)
                 return pinElement(element);
             return selectElement(e, element);

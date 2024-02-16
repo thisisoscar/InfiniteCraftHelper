@@ -67,7 +67,7 @@ export function init(elements: elements) {
 		e: MouseEvent,
 		element: { text: string; emoji?: string; discovered: boolean },
 	) => {
-		if (e.button === 2) return openCraftsForElement(element);
+		if (e.button === 2) return openCraftsForElement(element, []);
 		if (e.altKey) return pinElement(element);
 		return selectElement(e, element);
 	};

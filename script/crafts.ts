@@ -75,7 +75,7 @@ export async function addElementToCrafts(
 	await GM.setValue('recipes', JSON.stringify(recipes));
 }
 
-export function openCraftsForElement(element: { text: string; emoji?: string }) {
+export function openCraftsForElement(element: { text: string; emoji?: string }, history: Array<object>) {
 	craftsTitle.innerHTML = '';
 	const titleEmoji = document.createElement('span');
 	titleEmoji.classList.add('display-item-emoji');
@@ -109,7 +109,8 @@ export function openCraftsForElement(element: { text: string; emoji?: string }) 
 			firstDiv.appendChild(document.createTextNode(` ${elementRecipe[0].text} `));
 			if (recipeKeys.includes(elementRecipe[0].text)) {
 				firstDiv.addEventListener('click', () => {
-					openCraftsForElement(elementRecipe[0]);
+					history.push(element);
+					openCraftsForElement(elementRecipe[0], history);
 				});
 			}
 			recipeDiv.appendChild(firstDiv);
@@ -129,7 +130,8 @@ export function openCraftsForElement(element: { text: string; emoji?: string }) 
 			secondDiv.appendChild(document.createTextNode(` ${elementRecipe[1].text} `));
 			if (recipeKeys.includes(elementRecipe[1].text)) {
 				secondDiv.addEventListener('click', () => {
-					openCraftsForElement(elementRecipe[1]);
+					history.push(element);
+					openCraftsForElement(elementRecipe[1], history);
 				});
 			}
 			recipeDiv.appendChild(secondDiv);

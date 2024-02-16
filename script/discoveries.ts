@@ -71,7 +71,7 @@ export function addElementToDiscoveries(element: { text: string; emoji?: string;
 
 	if (recipeKeys.includes(element.text)) {
 		elementDiv.addEventListener('click', () => {
-			openCraftsForElement(element);
+			openCraftsForElement(element, []);
 		});
 	}
 
